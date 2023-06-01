@@ -1,0 +1,42 @@
+{% include 'base/nav.html' %}
+{% block content %}
+{% load static %}
+<style>
+    .homecontainer{
+        display:grid;
+        grid-template-columns: 1fr 3fr 1fr ;
+
+    }
+</style>
+
+
+
+<div class="homecontainer ">
+
+    <div >
+        
+       {% include 'base/topic_component.html' %}
+
+    </div>
+
+    <div>
+        
+        <div class=" text-center    alert alert-success" role="alert"">
+            
+           
+             <h5> USER {{ user.username }}  </h5> 
+            
+        </div>
+        <br>
+        
+        {% include 'base/feed.html' %}
+    </div>
+
+    <div>
+        {% include 'base/activity_component.html' %}
+    </div>
+
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,25 @@
+<div class=" text-center    alert alert-primary" role="alert"">
+            
+           
+    <h5>  Browse Topics </h5> 
+   
+</div>
+
+<br>
+<a href="{% url 'home' %}" class="badge badge-success"> ALL </a>
+<br>
+<br>
+    {% for topic in topics %}
+    <a href="{% url 'home' %}?q={{topic.name}}" class="badge badge-dark"><i>{{topic.name}}</i>  </a>
+    <br>
+    <br>
+       
+    {% endfor %}
+<br>
+
+{% if request.user.is_authenticated %}
+<div class="text-center">
+
+<span><a href="{% url 'createtopic' %}"> <button type="button" class="btn btn-outline-success"> Crate New Topics  </button> </a></span>
+{% endif %}
+</div>

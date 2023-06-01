@@ -1,0 +1,21 @@
+ <!-- this page is for the activity  page ko right side  -->
+
+ <div class="text-center alert alert-primary" role="alert"><h5> Recent activities </h5></div>
+        
+ <br>
+ {% for message in messages %}
+ <div>
+     <small> @{{message.user}} {{message.created |timesince}} ago </small>
+     <small> replied in {{message.room}}</small>
+     <br>
+     <br>
+     <small> {{message.body}}  </small>
+     {% if request.user == message.user %}
+     <a href="{% url 'deletemesage' message.id %}" class="btn btn-outline-danger btn-sm"> Delete </a>
+     {% endif %}
+     <br>
+     <br>
+     <hr>
+ 
+ </div>
+ {% endfor %}

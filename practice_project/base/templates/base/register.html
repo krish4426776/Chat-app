@@ -1,0 +1,17 @@
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    
+
+    <h1><span class="badge bg-warning text-dark">REGISTRATION</span></h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+    
+        <input type="submit" class="btn btn-outline-success" value= "Register" >
+    </form>
+    <p> Already Have An Account ? . Login here <a href="{% url 'login' %}" class="badge bg-warning text-dark"> Login </a></p>
+

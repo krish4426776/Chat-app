@@ -1,0 +1,28 @@
+{% include 'base/nav.html' %}
+{% block content %}
+<style>
+    .homecontainer{
+        display:grid;
+        grid-template-columns: 1fr 3fr 1fr ;
+
+    }
+</style>
+<br>
+<div class="homecontainer ">
+    <div >
+       {% include 'base/topic_component.html' %}
+
+    </div>
+
+    <div>
+        <div class="alert alert-info" role="alert">
+            <h5> <b>    {{room_count}} rooms available</b> </h5>
+            </div>
+            {% include 'base/feed.html' %}
+    </div>
+    <div >
+       {% include 'base/activity_component.html' %}
+    </div>
+</div>
+
+{% endblock %}

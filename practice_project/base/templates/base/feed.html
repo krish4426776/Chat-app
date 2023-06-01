@@ -1,0 +1,19 @@
+{% for room in rooms %}
+   <span><a  href="{% url 'profile'  room.host.id  %}"><button type="button" class="btn btn-outline-success"> @{{room.host.username}} </button></a>   </span>     
+{% if request.user == room.host %}
+<span><a href="{% url 'update' room.id %}"> <button type="button" class="btn btn-outline-primary"> EDIT </button> </a></span>
+<span><a href="{% url 'delete' room.id %}"> <button type="button"class="btn btn-danger"> DELETE </button> </a></span>
+{% endif %}
+<h5>  {{room.id}} -- > <a href="{% url 'room' room.id %}" > {{room.name}} </a> </h5> 
+<small><span class="badge badge-pill badge-info">{{room.topic.name}} </span></small>
+<br>
+<br>
+<br>
+
+{% endfor %}
+
+
+
+
+
+ 

@@ -1,0 +1,21 @@
+{% block content %}
+
+
+
+<div class="update">
+    <form method="POST">
+        <h1> user update page  </h1>
+        {% csrf_token %}
+        {{form.as_p}}
+        <hr>
+        <div class="form__action">
+            <a class="btn btn--dark" href="{% url 'home' %}">Cancel</a>
+            <button class="btn btn--main" type="submit">Update</button>
+        </div>
+    
+    </form>
+    </div>
+    
+
+
+{% endblock %}

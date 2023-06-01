@@ -1,0 +1,19 @@
+{% include 'base/nav.html' %}
+{% block content %}
+<form method="POST" action="">
+    {% csrf_token %}
+    <div class="alert alert-danger" role="alert">
+        ARE YOU SURE YOU WANT TO DELETE --  {{obj}}? 
+        <br>
+        <br>
+        <a href="{{request.META.HTTP_REFERER}}" class="badge badge-success">GO back</a>
+    </div>
+    
+    
+
+
+    <input type="Submit" value="CONFIRM"  class="btn btn-danger"    >
+</form>
+
+
+{% endblock %}
